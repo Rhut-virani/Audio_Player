@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 
 
 app.use(express.static('./Front-End/build/'));
-app.use('/static_assets', express.static('./Front-End/build/static/'));
+app.use('/static_assets', express.static('./Front-End/build/'));
 
 let songData = [ 
     {
