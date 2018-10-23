@@ -22,7 +22,7 @@ app.use(express.static('./Front-End/build'));
 // app.use('/static', express.static('./Front-End/build/static/'));
 
 app.get('/', function(request, response) {
-  response.send('Hello World!');
+  response.send('./Front-End/build/index.html');
   });
 
 let songData = [ 
