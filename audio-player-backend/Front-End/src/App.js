@@ -8,6 +8,9 @@ import SongsList from './components/SongsList';
 import SongDetails from './components/SongDetails';
 import Copyright from './components/Copyright';
 
+let baseUrl = window.location.hostname.includes('localhost') ? ("http://localhost:8080") : '';
+
+
 export default class App extends Component {
   constructor(){
     super();
@@ -30,7 +33,9 @@ export default class App extends Component {
 
   // getting data from the backend  
   componentDidMount(){
-    axios.get('http://localhost:8080/songdata')
+    // axios.get('http://localhost:8080/songdata')
+    let url = baseUrl + '/songdata';
+    axios.get(url)
           .then((result)=>{
             this.setState({
               song: result.data
