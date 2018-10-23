@@ -1,11 +1,18 @@
 const express = require('express'),
       app = express();
 
+const PORT = process.env.PORT || 8080;
+
+
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+// app.use(express.static('./pen-and-paper-frontend/build'));
+app.use(express.static(''));
+// app.use('/static_assets', express.static('./pen-and-paper-frontend/build/static'));
 
 let songData = [ 
     {
@@ -50,6 +57,6 @@ app.get('/songdata', (req,res)=>{
     res.json(songData);
 });
 
-app.listen(8080, (req,res)=>{
-    console.log('Server runnning on 8080 ::');
+app.listen(PORT, (req,res)=>{
+    console.log('Server runnning on' + PORT);
 }) 

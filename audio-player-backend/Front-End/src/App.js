@@ -6,7 +6,7 @@ import axios from 'axios';
 import Songs from '././components/Songs';
 import SongsList from './components/SongsList';
 import SongDetails from './components/SongDetails';
-import Copyright from './components/Copyright'
+import Copyright from './components/Copyright';
 
 export default class App extends Component {
   constructor(){
