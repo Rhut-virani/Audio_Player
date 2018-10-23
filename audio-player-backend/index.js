@@ -1,5 +1,7 @@
 const express = require('express'),
-      app = express();
+      app = express(),
+      bodyParser = require('body-parser');
+
 
 const PORT = process.env.PORT || 8080;
 
