@@ -21,6 +21,10 @@ app.use((req, res, next) => {
 app.use(express.static('./Front-End/build'));
 // app.use('/static', express.static('./Front-End/build/static/'));
 
+app.get('/', function(request, response) {
+  response.send('Hello World!');
+  });
+
 let songData = [ 
     {
     name: 'One Wish',
