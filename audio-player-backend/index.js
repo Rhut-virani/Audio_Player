@@ -10,9 +10,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use(express.static('./pen-and-paper-frontend/build'));
-app.use(express.static(''));
-// app.use('/static_assets', express.static('./pen-and-paper-frontend/build/static'));
+
+app.use(express.static('./Front-End/build/'));
+app.use('/static_assets', express.static('./Front-End/static/'));
 
 let songData = [ 
     {
