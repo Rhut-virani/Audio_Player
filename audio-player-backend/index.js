@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 app.use(express.static('./Front-End/build'));
 // app.use('/static', express.static('./Front-End/build/static/'));
 app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, './Front-End/build/index.html'))
+  response.sendFile(path.resolve('./Front-End/build', 'index.html'))
 });
 
 let songData = [ 
