@@ -18,11 +18,11 @@ app.use((req, res, next) => {
 });
 
 
-app.use(express.static('./Front-End/build'));
+// app.use(express.static('./Front-End/build'));
 // app.use('/static', express.static('./Front-End/build/static/'));
-app.get('*', function (request, response){
-  response.sendFile(path.resolve('./Front-End/build', 'index.html'))
-});
+app.use(express.static(__dirname + './Front-End/build'));
+
+
 
 let songData = [ 
     {
