@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 // app.use(express.static('./Front-End/build'));
 // app.use('/static', express.static('./Front-End/build/static/'));
-app.use(express.static(__dirname + './Front-End/build'));
+app.use(express.static(__dirname + '../Front-End/build'));
 
 let songData = [ 
     {
@@ -66,7 +66,7 @@ app.get('/songdata', (req,res)=>{
 });
 
 app.get('*', (req, res) => {
-  res.sendFile('index.html',{root: __dirname + './Front-End/build'});
+  res.sendFile('index.html',{root: __dirname + '../Front-End/build'});
 });
 
 app.listen(PORT, (req,res)=>{
