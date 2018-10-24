@@ -22,11 +22,6 @@ app.use((req, res, next) => {
 // app.use('/static', express.static('./Front-End/build/static/'));
 app.use(express.static(__dirname + './Front-End/build'));
 
-app.get('*', (req, res) => {
-  res.sendFile('index.html',{root: __dirname + './Front-End/build'});
-});
-
-
 let songData = [ 
     {
     name: 'One Wish',
@@ -68,6 +63,10 @@ let songData = [
 
 app.get('/songdata', (req,res)=>{
     res.json(songData);
+});
+
+app.get('*', (req, res) => {
+  res.sendFile('index.html',{root: __dirname + './Front-End/build'});
 });
 
 app.listen(PORT, (req,res)=>{
